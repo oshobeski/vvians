@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="card" *ngFor="let event of eventsList" style="width: 18rem;float: left;height: 20rem; margin: 10px">
+        <img class="card-img-top" [src]="event.cardImageUrl" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{event.displayName}}</h5>
+            <p class="card-text"></p>
+        </div>
+        <div class="card-footer" style="text-align: center;">
+            <small class="text-muted">{{event.startTime | date: 'yyyy-MM-dd'}} | {{event.city}} |
+                <a href="https://www.townscript.com/e/{{event.shortName}}" target="_blank">{{event.minimumTicketPrice ==
+                    0 ? 'Free' : event.minimumTicketPrice | currency:'INR':true}}</a>
+            </small>
+        </div>
+    </div>
+</div>
